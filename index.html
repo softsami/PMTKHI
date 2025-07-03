@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asset Data Capture</title>
-  <script defer src="app.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -52,7 +51,7 @@
   </div>
 
   <script>
-    const SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbxqxZ4dY7afVhQiPl2Uc1YspGwYoC3t1mnuFQhJwM8iqLaD-DvKQ6-tUZQr7TwFB9I/exec'; // Replace with actual URL
+    const SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbw76vQxKwtnRyW6tP3eEthOEnGXz7P16X36sF6OxYCnqCOXAbdlnpZdIeWhtPOFdJs/exec'; // Replace with actual URL
     const credentials = { username: "admin", password: "123" };
     let currentUser = "";
 
@@ -83,7 +82,7 @@
       const date = document.getElementById("date").value;
       const postedBy = currentUser;
 
-      fetch(SHEET_API_URL, {
+      fetch('https://script.google.com/macros/s/AKfycbw76vQxKwtnRyW6tP3eEthOEnGXz7P16X36sF6OxYCnqCOXAbdlnpZdIeWhtPOFdJs/exec', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ assetId, ibc, assetType, date, postedBy })
